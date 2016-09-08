@@ -4,4 +4,4 @@ zypper dup
 # reboot for new kernel
 zypper in broadcom-wl broadcom-wl-kmp-default
 # reboot and configure wireless
-zypper in chromium krusader yakuake git gcc vertualbox
+zypper in chromium krusader yakuake git gcc virtualbox
