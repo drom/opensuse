@@ -5,7 +5,7 @@ zypper dup
 # if Broadcom card used
 zypper in broadcom-wl broadcom-wl-kmp-default
 # reboot and configure wireless
-zypper in chromium krusader yakuake vlc git gcc virtualbox kdiff3 zip krename
+zypper in chromium krusader yakuake vlc git gcc virtualbox kdiff3 rar zip krename
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.31.7/install.sh | bash
 # hiDPI https://wiki.archlinux.org/index.php/HiDPI
 # System Settings -> Fint -> Force DPI: 144
