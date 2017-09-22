@@ -13,3 +13,5 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | b
 # Ham Radio
 zypper ar -f -n hamradio https://download.opensuse.org/repositories/hamradio/openSUSE_Tumbleweed/ hamradio
 zypper in gqrx gnuradio rtl-sdr
+# Plex
+# https://www.plex.tv/downloads/
