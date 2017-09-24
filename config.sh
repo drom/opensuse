@@ -14,7 +14,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | b
 # Syatem Settings -> Input Devices -> Keyboard -> Layouts -> Configure layouts -> +Add -> Russian
 # TODO switch-off main menu
 #
-# Skipe
+# https://github.com/psifidotos/Latte-Dock
+#
+# Skype
 #
 # Ham Radio
 zypper ar -f -n hamradio https://download.opensuse.org/repositories/hamradio/openSUSE_Tumbleweed/ hamradio
