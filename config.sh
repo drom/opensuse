@@ -27,5 +27,4 @@ zypper in gqrx gnuradio rtl-sdr
 # wallets
 zypper in pam_kwallet gnome-keyring-pam
 # atom
-wget https://atom.io/download/rpm
-
+wget https://atom.io/download/rpm -O atom.x86_64.rpm
