@@ -26,3 +26,6 @@ zypper in gqrx gnuradio rtl-sdr
 # https://www.plex.tv/downloads/
 # wallets
 zypper in pam_kwallet gnome-keyring-pam
+# atom
+wget https://atom.io/download/rpm
+
