@@ -17,7 +17,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | b
 # https://github.com/psifidotos/Latte-Dock
 #
 # Skype
-wget https://go.skype.com/skypeforlinux-64.rpm
+# wget https://go.skype.com/skypeforlinux-64.rpm
+zypper ar -f https://repo.skype.com/rpm/stable skypeforlinux
+zypper install skypeforlinux
 #
 # Ham Radio
 zypper ar -f -n hamradio https://download.opensuse.org/repositories/hamradio/openSUSE_Tumbleweed/ hamradio
