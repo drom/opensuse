@@ -1,3 +1,4 @@
+```sh
 # tumbleweed fresh install with kde5
 zypper ar -f -n packman http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
 zypper dup
@@ -30,3 +31,4 @@ zypper in gqrx gnuradio rtl-sdr
 zypper in pam_kwallet gnome-keyring-pam
 # atom
 wget https://atom.io/download/rpm -O atom.x86_64.rpm
+```
