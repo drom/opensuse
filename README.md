@@ -10,11 +10,14 @@ zypper in chromium krusader yakuake vlc git gcc virtualbox kdiff3 rar zip krenam
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.4/install.sh | bash
 # hiDPI https://wiki.archlinux.org/index.php/HiDPI
 # System Settings -> Font -> Force DPI: 144
-#
+
 # Russian
 # Syatem Settings -> Input Devices -> Keyboard -> Layouts -> Configure layouts -> +Add -> Russian
+# keyboard
+~/.config/kxkbrc
+Options=grp:lwin_toggle,grp_led:scroll
 # TODO switch-off main menu
-#
+
 # https://github.com/psifidotos/Latte-Dock
 #
 # Skype
