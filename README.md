@@ -17,6 +17,9 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 ~/.config/kxkbrc
 Options=grp:lwin_toggle,grp_led:scroll
 # TODO switch-off main menu
+# system settings --> Shortcuts --> Global Shortcuts --> Plasma --> Activate Application Menu Widget -->
+#  Global = none
+#  Global Alternate = Alt+F1
 
 # https://github.com/psifidotos/Latte-Dock
 #
