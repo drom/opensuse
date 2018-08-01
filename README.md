@@ -20,6 +20,11 @@ Options=grp:lwin_toggle,grp_led:scroll
 # system settings --> Shortcuts --> Global Shortcuts --> Plasma --> Activate Application Menu Widget -->
 #  Global = none
 #  Global Alternate = Alt+F1
+#
+# in ~/.config/kwinrc.
+# [ModifierOnlyShortcuts]
+# Meta=
+
 
 # https://github.com/psifidotos/Latte-Dock
 #
