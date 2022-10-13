@@ -11,6 +11,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | 
 # hiDPI https://wiki.archlinux.org/index.php/HiDPI
 # System Settings -> Font -> Force DPI: 144
 
+# DPMS blank screen
+xset s off	# Disable screen saver blanking
+xset -dpms  # Turn off DPMS
+
 # Russian
 # Syatem Settings -> Input Devices -> Keyboard -> Layouts -> Configure layouts -> +Add -> Russian
 # keyboard
