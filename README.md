@@ -49,3 +49,6 @@ wget https://atom.io/download/rpm -O atom.x86_64.rpm
 # add to ~/.bashrc
 export PATH=$PATH:./node_modules/.bin
 ```
+
+https://zoom.us/download
+
