@@ -1,13 +1,20 @@
 ```sh
-# tumbleweed fresh install with kde5
+# tumbleweed fresh install with Gnome
+
 zypper ar -f -n packman http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+
 zypper dup
+
 # reboot for new kernel
+
 # if Broadcom card used
 zypper in iw broadcom-wl broadcom-wl-kmp-default
 # reboot and configure wireless
-zypper in chromium krusader yakuake vlc git gcc gcc-c++ virtualbox dropbox-cli kdiff3 rar zip krename ktorrent inkscape llvm clang
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.11/install.sh | bash
+
+zypper in chromium krusader yakuake vlc git gcc gcc-c++ virtualbox dropbox-cli kdiff3 rar zip krename ktorrent inkscape llvm clang cmake
+
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+
 # hiDPI https://wiki.archlinux.org/index.php/HiDPI
 # System Settings -> Font -> Force DPI: 144
 
@@ -20,6 +27,14 @@ xset -dpms  # Turn off DPMS
 # keyboard
 ~/.config/kxkbrc
 Options=grp:lwin_toggle,grp_led:scroll
+
+# gnome 43
+
+gsettings get org.gnome.desktop.input-sources xkb-options
+
+gsettings set org.gnome.desktop.input-sources xkb-options "['grp:lwin_toggle', 'grp_led:scroll']"
+
+
 # TODO switch-off main menu
 # system settings --> Shortcuts --> Global Shortcuts --> Plasma --> Activate Application Menu Widget -->
 #  Global = none
@@ -51,5 +66,7 @@ export PATH=$PATH:./node_modules/.bin
 ```
 
 https://zoom.us/download
+
+https://desktop.telegram.org
 
 
