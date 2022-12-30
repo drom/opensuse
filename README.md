@@ -34,6 +34,7 @@ gsettings get org.gnome.desktop.input-sources xkb-options
 
 gsettings set org.gnome.desktop.input-sources xkb-options "['grp:lwin_toggle', 'grp_led:scroll']"
 
+sudo usermod -a -G dialout $USER
 
 # TODO switch-off main menu
 # system settings --> Shortcuts --> Global Shortcuts --> Plasma --> Activate Application Menu Widget -->
