@@ -71,3 +71,4 @@ https://zoom.us/download
 https://desktop.telegram.org
 
 
+https://github.com/openSUSE/SUSEPrime#hdmi-audio-support-does-not-work
