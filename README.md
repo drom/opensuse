@@ -72,3 +72,5 @@ https://desktop.telegram.org
 
 
 https://github.com/openSUSE/SUSEPrime#hdmi-audio-support-does-not-work
+
+NTP client https://chrony.tuxfamily.org/examples.html
