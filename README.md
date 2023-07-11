@@ -1,7 +1,8 @@
 ```sh
 # tumbleweed fresh install with Gnome
 
-zypper ar -f -n packman http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+# zypper ar -f -n packman http://ftp.gwdg.de/pub/linux/misc/packman/suse/openSUSE_Tumbleweed/ packman
+sudo zypper ar -cfp 999 https://ftp.fau.de/packman/suse/openSUSE_Tumbleweed/ packman
 
 zypper dup
 
@@ -50,7 +51,7 @@ sudo usermod -a -G dialout $USER
 #
 # Skype
 # wget https://go.skype.com/skypeforlinux-64.rpm
-zypper ar -f https://repo.skype.com/rpm/stable skypeforlinux
+zypper ar -f https://repo.skype.com/rpm/unstable skypeforlinux
 zypper install skypeforlinux
 #
 # Ham Radio
@@ -64,6 +65,8 @@ zypper in pam_kwallet gnome-keyring-pam
 wget https://atom.io/download/rpm -O atom.x86_64.rpm
 # add to ~/.bashrc
 export PATH=$PATH:./node_modules/.bin
+
+sudo zypper ar --refresh https://download.nvidia.com/opensuse/tumbleweed NVIDIA
 ```
 
 https://zoom.us/download
@@ -77,3 +80,4 @@ NTP client
 
 * https://chrony.tuxfamily.org/examples.html
 * https://documentation.suse.com/smart/linux/html/task-configure-ntp/index.html
+
