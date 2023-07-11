@@ -66,7 +66,10 @@ wget https://atom.io/download/rpm -O atom.x86_64.rpm
 # add to ~/.bashrc
 export PATH=$PATH:./node_modules/.bin
 
-sudo zypper ar --refresh https://download.nvidia.com/opensuse/tumbleweed NVIDIA
+sudo zypper ar https://download.nvidia.com/opensuse/tumbleweed NVIDIA
+
+sudo zypper ar https://packages.microsoft.com/yumrepos/vscode vscode
+
 ```
 
 https://zoom.us/download
