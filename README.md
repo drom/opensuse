@@ -22,7 +22,7 @@ zypper in iw broadcom-wl broadcom-wl-kmp-default
 
 zypper in chromium krusader yakuake vlc git gcc gcc-c++ virtualbox dropbox-cli kdiff3 rar zip krename ktorrent inkscape llvm clang cmake
 
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash
 
 # hiDPI https://wiki.archlinux.org/index.php/HiDPI
 # System Settings -> Font -> Force DPI: 144
