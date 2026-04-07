@@ -1,34 +1,43 @@
 #!/bin/bash
 
-# Define colors for better readability
 RED='\033[0;31m'
+YELLOW='\033[0;33m'
 GREEN='\033[0;32m'
-NC='\033[0m' # No Color
+NC='\033[0m'
 BOLD='\033[1m'
 
-echo -e "${BOLD}Scanning for uncommitted changes...${NC}\n"
+echo -e "${BOLD}Scanning Git repositories...${NC}\n"
 
-# Find all directories containing a .git folder
-# -type d: search for directories
-# -name ".git": look for the git metadata folder
-# -prune: don't descend into the .git folder itself
 find . -name ".git" -type d -prune | while read -r gitdir; do
-    # Get the parent directory of the .git folder
     repo_dir=$(dirname "$gitdir")
 
-    # Move into the repo and check status
-    # Use --porcelain to get a stable, easy-to-parse output
-    status=$(git -C "$repo_dir" status --porcelain 2>/dev/null)
+    # 1. Check for Uncommitted Changes (Local files)
+    uncommitted=$(git -C "$repo_dir" status --porcelain 2>/dev/null)
 
-    if [[ -n "$status" ]]; then
-        echo -e "${RED}[!] Uncommitted changes:${NC} $repo_dir"
-        # Optional: Print a summary of changes
-        # echo "$status" | sed 's/^/    /'
-    else
-        # Optional: Uncomment the line below if you want to see clean repos too
-        # echo -e "${GREEN}[✓] Clean:${NC} $repo_dir"
-        true
+    # 2. Check for Unpushed Commits (Local commits vs Remote)
+    # We check if the current branch has an upstream to compare against
+    unpushed=""
+    if git -C "$repo_dir" rev-parse --abbrev-ref @{u} >/dev/null 2>&1; then
+        # Count commits that are in HEAD but not in the upstream branch
+        unpushed_count=$(git -C "$repo_dir" rev-list @{u}..HEAD | wc -l | xargs)
+        if [ "$unpushed_count" -gt 0 ]; then
+            unpushed="Yes ($unpushed_count ahead)"
+        fi
+    fi
+
+    # Output results
+    if [[ -n "$uncommitted" || -n "$unpushed" ]]; then
+        echo -e "${BOLD}Repo:${NC} $repo_dir展"
+
+        if [[ -n "$uncommitted" ]]; then
+            echo -e "  ${RED}[!] Uncommitted changes found${NC}"
+        fi
+
+        if [[ -n "$unpushed" ]]; then
+            echo -e "  ${YELLOW}[↑] Unpushed commits: $unpushed${NC}"
+        fi
+        echo ""
     fi
 done
 
-echo -e "\n${BOLD}Scan complete.${NC}"
+echo -e "${BOLD}Scan complete.${NC}"
