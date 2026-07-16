@@ -11,8 +11,12 @@ echo -e "${BOLD}Scanning Git repositories...${NC}\n"
 find . -name ".git" -type d -prune | while read -r gitdir; do
     repo_dir=$(dirname "$gitdir")
 
-    # 1. Check for Uncommitted Changes (Local files)
-    uncommitted=$(git -C "$repo_dir" status --porcelain 2>/dev/null)
+    # 1. Check for local file states
+    porcelain=$(git -C "$repo_dir" status --porcelain 2>/dev/null)
+    # Untracked files: lines starting with "??"
+    untracked=$(echo "$porcelain" | grep '^??' )
+    # Changes not staged for commit: everything else (tracked changes)
+    unstaged=$(echo "$porcelain" | grep -v '^??' | grep -v '^[[:space:]]*$')
 
     # 2. Check for Unpushed Commits (Local commits vs Remote)
     # We check if the current branch has an upstream to compare against
@@ -26,11 +30,15 @@ find . -name ".git" -type d -prune | while read -r gitdir; do
     fi
 
     # Output results
-    if [[ -n "$uncommitted" || -n "$unpushed" ]]; then
-        echo -e "${BOLD}Repo:${NC} $repo_dir展"
+    if [[ -n "$unstaged" || -n "$untracked" || -n "$unpushed" ]]; then
+        echo -e "${BOLD}Repo:${NC} $repo_dir"
 
-        if [[ -n "$uncommitted" ]]; then
-            echo -e "  ${RED}[!] Uncommitted changes found${NC}"
+        if [[ -n "$unstaged" ]]; then
+            echo -e "  ${RED}[~] Changes not staged for commit${NC}"
+        fi
+
+        if [[ -n "$untracked" ]]; then
+            echo -e "  ${GREEN}[+] Untracked files${NC}"
         fi
 
         if [[ -n "$unpushed" ]]; then
